@@ -1,0 +1,650 @@
+
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #050505;
+    color: white;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 15px 40px;
+
+    background-color: #080808;
+    border-bottom: 1px solid #222;
+}
+
+header img {
+    width: 140px;
+}
+
+header nav {
+    display: flex;
+    gap: 25px;
+}
+
+header nav a {
+    color: #aaa;
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: white;
+}
+
+
+/* BOTÓN LOGIN */
+
+.btn-login {
+    padding: 9px 15px;
+
+    border: 1px solid #444;
+    border-radius: 5px;
+
+    color: white;
+    text-decoration: none;
+
+    transition: 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: white;
+    color: black;
+}
+
+
+/* =========================
+   HERO VIP
+========================= */
+
+.hero-vip {
+    min-height: 80vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.95),
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.2)
+        ),
+        url("vip-fondo.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+}
+
+
+/* LÍNEA ROJA DECORATIVA */
+
+.hero-vip::before {
+    content: "";
+
+    position: absolute;
+
+    left: 80px;
+    top: 25%;
+
+    width: 4px;
+    height: 150px;
+
+    background-color: #e50914;
+}
+
+
+/* CONTENIDO */
+
+.hero-vip div {
+    max-width: 650px;
+
+    margin-left: 35px;
+}
+
+.hero-vip p:first-child {
+    margin-bottom: 15px;
+
+    color: #e50914;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    letter-spacing: 4px;
+}
+
+.hero-vip h1 {
+    margin: 0;
+
+    font-size: 65px;
+
+    line-height: 1.05;
+
+    letter-spacing: 2px;
+}
+
+.hero-vip h1 span {
+    display: block;
+
+    color: #e50914;
+}
+
+.hero-vip p {
+    max-width: 550px;
+
+    margin: 25px 0;
+
+    color: #bbb;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* BOTÓN HERO */
+
+.hero-vip a {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    padding: 14px 25px;
+
+    background-color: #e50914;
+
+    color: white;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s ease;
+}
+
+.hero-vip a:hover {
+    background-color: #b80710;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   EXPERIENCIAS
+========================= */
+
+.experiencias {
+    max-width: 1200px;
+
+    margin: 100px auto;
+
+    padding: 0 25px;
+}
+
+.experiencias > h2 {
+    margin-bottom: 45px;
+
+    text-align: center;
+
+    font-size: 35px;
+}
+
+
+/* GRID */
+
+.vip-cards {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    align-items: stretch;
+}
+
+
+/* TARJETA */
+
+.vip-card {
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 35px 30px;
+
+    background-color: #111;
+
+    border: 1px solid #292929;
+
+    border-radius: 10px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.vip-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #555;
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+
+/* TARJETA DESTACADA */
+
+.vip-card.destacada {
+    border-color: #e50914;
+
+    transform: scale(1.04);
+
+    position: relative;
+}
+
+.vip-card.destacada:hover {
+    transform: scale(1.04) translateY(-8px);
+
+    box-shadow: 0 20px 50px rgba(229, 9, 20, 0.15);
+}
+
+
+/* ETIQUETA */
+
+.vip-card.destacada > span {
+    align-self: flex-start;
+
+    margin-bottom: 20px;
+
+    padding: 6px 10px;
+
+    background-color: #e50914;
+
+    border-radius: 3px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+/* TÍTULO */
+
+.vip-card h3 {
+    margin: 0 0 15px;
+
+    font-size: 24px;
+}
+
+.vip-card.destacada h3 {
+    color: #e50914;
+}
+
+
+/* DESCRIPCIÓN */
+
+.vip-card p {
+    margin: 0 0 30px;
+
+    color: #999;
+
+    line-height: 1.7;
+
+    font-size: 14px;
+}
+
+
+/* PRECIO */
+
+.vip-card strong {
+    margin-top: auto;
+
+    margin-bottom: 20px;
+
+    font-size: 30px;
+}
+
+
+/* BOTÓN */
+
+.vip-card a {
+    display: block;
+
+    padding: 12px;
+
+    border: 1px solid #444;
+
+    border-radius: 5px;
+
+    color: white;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s ease;
+}
+
+.vip-card a:hover {
+    background-color: #e50914;
+
+    border-color: #e50914;
+}
+
+
+/* BOTÓN DE LA DESTACADA */
+
+.vip-card.destacada a {
+    background-color: #e50914;
+
+    border-color: #e50914;
+}
+
+.vip-card.destacada a:hover {
+    background-color: #b80710;
+}
+
+
+/* =========================
+   BENEFICIOS
+========================= */
+
+.beneficios {
+    padding: 100px 25px;
+
+    background-color: #0a0a0a;
+
+    border-top: 1px solid #1c1c1c;
+    border-bottom: 1px solid #1c1c1c;
+}
+
+.beneficios > h2 {
+    margin: 0 0 50px;
+
+    text-align: center;
+
+    font-size: 32px;
+}
+
+
+/* GRID BENEFICIOS */
+
+.beneficios-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+/* BENEFICIO */
+
+.beneficios-grid article {
+    padding: 25px;
+
+    background-color: #111;
+
+    border: 1px solid #222;
+
+    border-radius: 8px;
+
+    transition: 0.3s ease;
+}
+
+.beneficios-grid article:hover {
+    transform: translateY(-5px);
+
+    border-color: #444;
+}
+
+.beneficios-grid h3 {
+    margin-top: 0;
+
+    font-size: 17px;
+}
+
+.beneficios-grid p {
+    margin-bottom: 0;
+
+    color: #888;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   FRASE FINAL
+========================= */
+
+.frase-vip {
+    min-height: 400px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 50px 25px;
+
+    text-align: center;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.9)
+        ),
+        url("vip-final.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.frase-vip h2 {
+    margin: 0;
+
+    font-size: 40px;
+}
+
+.frase-vip p {
+    margin-top: 15px;
+
+    color: #e50914;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 30px;
+
+    background-color: #080808;
+
+    border-top: 1px solid #222;
+
+    text-align: center;
+
+    color: #666;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    header {
+        padding: 15px 20px;
+    }
+
+    header nav {
+        gap: 12px;
+    }
+
+    .hero-vip {
+        padding: 60px 40px;
+    }
+
+    .hero-vip h1 {
+        font-size: 50px;
+    }
+
+    .vip-cards {
+        grid-template-columns: 1fr;
+        max-width: 550px;
+        margin: auto;
+    }
+
+    .vip-card.destacada {
+        transform: none;
+    }
+
+    .vip-card.destacada:hover {
+        transform: translateY(-8px);
+    }
+
+    .beneficios-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================
+   MÓVIL
+========================= */
+
+@media (max-width: 600px) {
+
+    header {
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    header nav {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+
+    /* HERO */
+
+    .hero-vip {
+        min-height: 70vh;
+
+        padding: 50px 25px;
+    }
+
+    .hero-vip::before {
+        left: 25px;
+
+        height: 100px;
+    }
+
+    .hero-vip div {
+        margin-left: 20px;
+    }
+
+    .hero-vip h1 {
+        font-size: 38px;
+    }
+
+    .hero-vip p {
+        font-size: 15px;
+    }
+
+
+    /* EXPERIENCIAS */
+
+    .experiencias {
+        margin: 70px auto;
+    }
+
+    .experiencias > h2 {
+        font-size: 28px;
+    }
+
+
+    /* BENEFICIOS */
+
+    .beneficios {
+        padding: 70px 20px;
+    }
+
+    .beneficios > h2 {
+        font-size: 27px;
+    }
+
+    .beneficios-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* FRASE */
+
+    .frase-vip {
+        min-height: 300px;
+    }
+
+    .frase-vip h2 {
+        font-size: 28px;
+    }
+
+    .frase-vip p {
+        font-size: 20px;
+    }
+}

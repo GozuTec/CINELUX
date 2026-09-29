@@ -1,0 +1,883 @@
+/* =========================
+   RESET BÁSICO
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #050505;
+    color: white;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background-color: #050505;
+    padding: 20px 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #222;
+}
+
+.logo {
+    margin: 0;
+}
+
+.logo img {
+    width: 140px;
+    display: block;
+}
+
+
+/* =========================
+   NAV
+========================= */
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: white;
+}
+
+
+/* BUSCADOR */
+
+.buscador {
+    display: flex;
+    align-items: center;
+
+    height: 38px;
+
+    background-color: #111;
+    border: 1px solid #333;
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.buscador input {
+    width: 150px;
+
+    background: transparent;
+    border: none;
+    outline: none;
+
+    color: white;
+
+    padding: 0 12px;
+}
+
+.buscador input::placeholder {
+    color: #777;
+}
+
+.buscador button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 100%;
+
+    background: transparent;
+    color: #aaa;
+
+    border: none;
+
+    cursor: pointer;
+
+    transition: color 0.3s ease;
+}
+
+.buscador button:hover {
+    color: white;
+}
+
+
+/* LOGIN */
+
+.btn-login {
+    white-space: nowrap;
+
+    padding: 9px 16px;
+
+    border: 1px solid #444;
+    border-radius: 5px;
+
+    color: white;
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: white;
+    border-color: white;
+    color: black;
+}
+/* =========================
+   HERO HACHIKO
+========================= */
+
+.section-hachiko {
+    min-height: 85vh;
+
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.9),
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.2)
+        ),
+        url("Hachiko-fondo.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+}
+
+
+/* CONTENIDO DEL HERO */
+
+.contenido-hachiko {
+    max-width: 650px;
+    margin-left: 8%;
+
+    position: relative;
+    z-index: 1;
+}
+
+.contenido-hachiko h1 {
+    font-size: 56px;
+    line-height: 1.05;
+    margin-bottom: 20px;
+}
+
+.contenido-hachiko p {
+    color: #d0d0d0;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   BOTONES HERO
+========================= */
+
+.btn-comprar,
+.btn-trailer {
+    display: inline-block;
+
+    padding: 13px 22px;
+    margin-top: 20px;
+    margin-right: 10px;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.btn-comprar {
+    background-color: #e50914;
+    color: white;
+}
+
+.btn-comprar:hover {
+    background-color: #b20710;
+    transform: translateY(-3px);
+}
+
+.btn-trailer {
+    background-color: transparent;
+    color: white;
+
+    border: 1px solid #777;
+}
+
+.btn-trailer:hover {
+    background-color: white;
+    color: black;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   SECCIONES
+========================= */
+
+main section:not(.section-hachiko) {
+    padding: 80px 7%;
+}
+
+main section h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   CATEGORÍAS
+========================= */
+
+.categorias {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.categoria {
+    background: transparent;
+
+    color: #aaa;
+
+    border: 1px solid #333;
+
+    padding: 9px 18px;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.categoria:hover {
+    border-color: #777;
+    color: white;
+}
+
+.categoria.activo {
+    background-color: white;
+    color: black;
+
+    border-color: white;
+}
+
+
+/* =========================
+   CARDS DE PELÍCULAS
+========================= */
+
+.contenedor-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.card {
+    background-color: #111;
+
+    border: 1px solid #222;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    width: 220px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+
+    border-color: #444;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+.card img {
+    width: 100%;
+    height: 300px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.card h3 {
+    padding: 0 15px;
+    margin-top: 18px;
+}
+
+.card p {
+    padding: 0 15px;
+
+    color: #999;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   BOTÓN CARD
+========================= */
+
+.btn-card {
+    display: inline-block;
+
+    margin: 10px 15px 20px;
+
+    padding: 9px 15px;
+
+    background-color: white;
+    color: black;
+
+    border-radius: 4px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 0.3s ease;
+}
+
+.btn-card:hover {
+    background-color: #e50914;
+    color: white;
+}
+
+
+/* =========================
+   SERVICIOS
+========================= */
+
+.contenedor-experiencias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.card-experiencia {
+    width: 280px;
+
+    background-color: #111;
+
+    border: 1px solid #222;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    transition: 0.3s ease;
+}
+
+.card-experiencia:hover {
+    transform: translateY(-6px);
+    border-color: #444;
+}
+
+.card-experiencia img {
+    width: 100%;
+    height: 180px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.card-experiencia h3 {
+    margin-top: 20px;
+}
+
+.card-experiencia p {
+    color: #999;
+
+    line-height: 1.6;
+
+    padding: 0 20px 20px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background-color: #080808;
+
+    border-top: 1px solid #222;
+
+    color: #666;
+
+    text-align: center;
+
+    padding: 30px;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    header {
+        padding: 20px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .contenido-hachiko {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .contenido-hachiko h1 {
+        font-size: 40px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    main section:not(.section-hachiko) {
+        padding: 60px 20px;
+    }
+
+    .contenedor-cards {
+        justify-content: center;
+    }
+
+    .section-hachiko {
+        min-height: 75vh;
+    }
+
+    .contenido-hachiko h1 {
+        font-size: 34px;
+    }
+
+}
+/* =========================
+   CARTELERA
+========================= */
+
+.cartelera {
+    display: grid;
+
+    /* Póster | Información | Horarios */
+    grid-template-columns: 220px 1fr 300px;
+
+    gap: 30px;
+
+    max-width: 1200px;
+
+    margin: 40px auto;
+    padding: 25px;
+
+    background-color: #111;
+
+    border: 1px solid #222;
+    border-radius: 10px;
+
+    transition: 
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Efecto al pasar el mouse */
+
+.cartelera:hover {
+    border-color: #444;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+
+/* =========================
+   CARTEL / POSTER
+========================= */
+
+.cartel img {
+    width: 100%;
+    height: 320px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 7px;
+}
+
+.cartel h3 {
+    margin: 12px 0 0;
+
+    font-size: 18px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   INFORMACIÓN
+========================= */
+
+.info-cartelera {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.info-cartelera h2 {
+    margin: 0 0 15px;
+
+    font-size: 30px;
+}
+
+.info-cartelera p {
+    margin: 6px 0;
+
+    color: #aaa;
+
+    line-height: 1.5;
+}
+
+.info-cartelera p:last-of-type {
+    margin-top: 15px;
+
+    color: #ccc;
+
+    line-height: 1.7;
+}
+
+
+/* BOTÓN TRAILER */
+
+.info-cartelera a {
+    display: inline-block;
+
+    width: fit-content;
+
+    margin-top: 20px;
+
+    padding: 10px 18px;
+
+    background-color: white;
+
+    color: black;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.info-cartelera a:hover {
+    background-color: #e50914;
+
+    color: white;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   HORARIOS
+========================= */
+
+.horarios {
+    display: grid;
+
+    gap: 15px;
+
+    align-content: center;
+}
+
+
+/* =========================
+   FORMATO
+========================= */
+
+.formato {
+    background-color: #080808;
+
+    border: 1px solid #222;
+
+    border-radius: 8px;
+
+    padding: 15px;
+}
+
+.formato h4 {
+    margin: 0 0 12px;
+
+    color: #e50914;
+
+    font-size: 16px;
+}
+
+.formato ul {
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+.formato li {
+    padding: 9px 0;
+
+    color: #aaa;
+
+    font-size: 14px;
+
+    border-bottom: 1px solid #222;
+}
+
+.formato li:last-child {
+    border-bottom: none;
+}
+
+
+/* =========================
+   TÍTULO DE CARTELERA
+========================= */
+
+body > section:first-of-type {
+    max-width: 1200px;
+
+    margin: 60px auto 30px;
+
+    padding: 0 25px;
+}
+
+body > section:first-of-type h1 {
+    margin: 0;
+
+    font-size: 40px;
+}
+
+body > section:first-of-type h1 span {
+    color: #e50914;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .cartelera {
+        grid-template-columns: 180px 1fr;
+
+        margin: 30px 20px;
+    }
+
+    .horarios {
+        grid-column: 1 / -1;
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .cartel img {
+        height: 270px;
+    }
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .cartelera {
+        grid-template-columns: 1fr;
+
+        margin: 25px 15px;
+
+        padding: 20px;
+    }
+
+    .cartel {
+        text-align: center;
+    }
+
+    .cartel img {
+        width: 200px;
+
+        height: 290px;
+
+        margin: auto;
+    }
+
+    .info-cartelera {
+        text-align: center;
+    }
+
+    .info-cartelera a {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .horarios {
+        grid-template-columns: 1fr;
+    }
+
+    body > section:first-of-type {
+        margin-top: 40px;
+
+        padding: 0 20px;
+    }
+
+    body > section:first-of-type h1 {
+        font-size: 30px;
+    }
+
+}
+/* =========================
+   PÁGINA DE TRAILER
+========================= */
+
+.trailer {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 25px;
+}
+
+.trailer h1 {
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+
+/* VIDEO */
+
+.video-container {
+    width: 100%;
+    background-color: #111;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #222;
+}
+
+.video-container video {
+    width: 100%;
+    display: block;
+}
+
+
+/* INFORMACIÓN */
+
+.informacion-pelicula {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 30px;
+
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+}
+
+.informacion-pelicula h2 {
+    margin-top: 0;
+}
+
+.informacion-pelicula p {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+.informacion-pelicula .datos {
+    color: #e50914;
+}
+
+
+/* PELÍCULAS RELACIONADAS */
+
+.peliculas-relacionadas {
+    max-width: 1100px;
+    margin: 70px auto;
+    padding: 0 25px;
+}
+
+.peliculas-relacionadas h2 {
+    margin-bottom: 30px;
+}
+
+.peliculas-relacionadas .contenedor-cards {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
